@@ -109,6 +109,7 @@ public class ProfileResource {
     @PUT
     @Path("/{id}")
     public Response updateProfile(
+            @PathParam("id") Long id,
             @RequestBody(required = true, content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Profile.class)))
             @Valid Profile profile) {
         profile = profileService.updateProfile(profile);
