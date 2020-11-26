@@ -1,14 +1,23 @@
 INSERT INTO profile (id, name, lastname, nickname, email, level, currentexp, nextlevelexp, money, gems) VALUES
-(nextval('hibernate_sequence'), 'José', 'Martín', 'José', 'email', 3, 1000, 200, 10, 800);
+(nextval('hibernate_sequence'), 'José', 'Martín', 'José', 'jose.martin@gmail.com', 1, 100, 400, 10, 30);
 INSERT INTO profile (id, name, lastname, nickname, email, level, currentexp, nextlevelexp, money, gems) VALUES
-(nextval('hibernate_sequence'), 'María', 'Fernandéz', 'María', 'email', 5, 2000, 500, 45, 300);
+(nextval('hibernate_sequence'), 'María', 'Núñez', 'María', 'maria.nunez@gmail.com', 1, 450, 50, 0, 0);
+INSERT INTO profile (id, name, lastname, nickname, email, level, currentexp, nextlevelexp, money, gems) VALUES
+(nextval('hibernate_sequence'), 'Victor', 'Fernández', 'Victor', 'v.fernandez@gmail.com', 2, 250, 250, 23, 30);
+INSERT INTO profile (id, name, lastname, nickname, email, level, currentexp, nextlevelexp, money, gems) VALUES
+(nextval('hibernate_sequence'), 'Cristina', 'González', 'Cris', 'cris.gzlz@gmail.com', 3, 300, 200, 15, 35);
 
+INSERT INTO item (id, profileid, type, name, requiredlevel, used) VALUES
+(1, 1, 'pet', 'Abeja trabajadora', 1, true);
+INSERT INTO item (id, profileid, type, name, requiredlevel, used) VALUES
+(7, 1, 'background', 'Viaje al fondo del mar', 1, true);
 
 INSERT INTO item (id, profileid, type, name, requiredlevel, used) VALUES
-(1, 1, 'pet', 'pet 1', 1, true);
+(3, 3, 'pet', 'Agente Rana 1', 2, true);
 INSERT INTO item (id, profileid, type, name, requiredlevel, used) VALUES
-(2, 1, 'pet', 'pet 2', 3, false);
+(7, 3, 'background', 'Viaje al fondo del mar', 1, true);
+
 INSERT INTO item (id, profileid, type, name, requiredlevel, used) VALUES
-(3, 1, 'background', 'background 1', 1, true);
+(6, 4, 'pet', 'Gato cariñoso', 3, true);
 INSERT INTO item (id, profileid, type, name, requiredlevel, used) VALUES
-(1, 2, 'pet', 'pet 2', 3, true);
+(8, 4, 'background', 'Vuela como un pájaro', 2, true);
