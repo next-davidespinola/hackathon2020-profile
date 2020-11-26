@@ -7,6 +7,6 @@ services:
       - 5432:5432
 
     environment:
-      POSTGRES_DB: kids-db
+      POSTGRES_DB: profiles-db
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
