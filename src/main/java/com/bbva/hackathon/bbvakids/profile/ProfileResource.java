@@ -107,6 +107,7 @@ public class ProfileResource {
     @Operation(summary = "Updates an exiting  Profile")
     @APIResponse(responseCode = "200", description = "The updated Profile", content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Profile.class)))
     @PUT
+    @Path("/{id}")
     public Response updateProfile(
             @RequestBody(required = true, content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Profile.class)))
             @Valid Profile profile) {
