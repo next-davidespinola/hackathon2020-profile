@@ -79,6 +79,22 @@ public class ProfileResource {
         }
     }
 
+    @POST
+    @Path("/{id}/inventory")
+    public Response addItem(
+            @Parameter(description = "Profile identifier", required = true)
+            @PathParam("id") Long id,
+            @RequestBody(required = true, content = @Content(mediaType = APPLICATION_JSON, schema = @Schema(implementation = Item.class))) Item item) {
+        Profile profile = profileService.findProfileById(id);
+        if (profile == null) {
+            LOGGER.debug("No Profile found with id " + id);
+            return Response.noContent().build();
+        }
+
+        item = itemService.addItem(item, profile.id);
+        return Response.ok(item).build();
+    }
+
     @PATCH
     @Path("/{id}/inventory/{itemId}")
     public Response updateProfileInventory(

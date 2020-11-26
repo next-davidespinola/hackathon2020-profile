@@ -26,4 +26,11 @@ public class ItemService {
         entity.used = item.used;
         return entity;
     }
+
+    public Item addItem(@Valid Item item, Long profileId) {
+        item.profileId = profileId;
+        item.used = false;
+        Item.persist(item);
+        return item;
+    }
 }
